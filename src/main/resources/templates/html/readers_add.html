@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../icon/favicon.ico">
+
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- 引入h+模板 所需css -->
+    <link href="../css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="../css/animate.css" rel="stylesheet">
+    <link href="../css/style.css?v=4.1.0" rel="stylesheet">
+
+    <!-- 结果提示框 css　-->
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>读者信息填写创建</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="signupForm">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">姓名：</label>
+                            <div class="col-sm-4">
+                                <input id="readers_name" name="readersName" class="form-control" type="text">
+                                <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 请输入与身份证相匹配姓名</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">身份证号：</label>
+                            <div class="col-sm-4">
+                                <input id="id_card" name="idCard" class="form-control" type="text" aria-required="true" aria-invalid="false" class="valid">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">籍贯：</label>
+                            <div class="col-sm-4">
+                                <input id="native_place" name="nativePlace" class="form-control" type="text" aria-required="true" aria-invalid="true" class="error">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">借阅密码：</label>
+                            <div class="col-sm-4">
+                                <input id="password" name="password" class="form-control" type="password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">确认密码：</label>
+                            <div class="col-sm-4">
+                                <input id="confirm_password" name="confirm_password" class="form-control" type="password">
+                                <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 请再次输入您的密码</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">联系电话：</label>
+                            <div class="col-sm-4">
+                                <input id="phone" name="readersPhone" class="form-control" type="text">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">学生学号：</label>
+                            <div class="col-sm-4">
+                                <input id="student_number" name="studentNumber" class="form-control" type="text">
+                                <span class="help-block m-b-none"><i class="fa fa-info-circle"></i>若无学号可不进行填写</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">现住址：</label>
+                            <div class="col-sm-4">
+                                <input id="address" name="address" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-3">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" class="checkbox" id="agree" name="agree"> 我已经认真阅读并同意《读者证使用协议》
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-3">
+                                <button id="readers_add_submit" class="btn btn-primary" type="submit">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- 全局js -->
+<script src="../js/jquery-3.3.1.min.js?v=2.1.4"></script>
+<script src="../js/bootstrap/bootstrap.min.js?v=3.3.6"></script>
+
+<!-- H+ 模板js -->
+<script src="../js/content.js?v=1.0.0"></script>
+
+<!-- jQuery Validation plugin javascript 校验用js-->
+<script src="../js/plugins/validate/jquery.validate.min.js"></script>
+<script src="../js/plugins/validate/messages_zh.min.js"></script>
+
+<!-- Sweet alert  结果提示框js-->
+<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
+
+<script src="../js/business/readers_add.js"></script>
+
+</body>
+</html>
