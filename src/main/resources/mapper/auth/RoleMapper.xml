@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.book.mapper.auth.RoleMapper" >
+
+    <resultMap id="BaseResultMap" type="com.book.model.auth.RoleDO">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="role_name" property="roleName" jdbcType="VARCHAR"></result>
+        <result column="remarks" property="remarks" jdbcType="VARCHAR"></result>
+        <result column="gmt_create"  property="gmtCreate"></result>
+        <result column="gmt_modified"  property="gmtModified"></result>
+    </resultMap>
+
+
+    <select id="selectRolesByUserId" resultMap="BaseResultMap">
+        select tr.* from tb_role tr inner join tb_user_role tur  on  tr.id = tur.role_id  where tur.user_id = #{userId}
+    </select>
+
+</mapper>
