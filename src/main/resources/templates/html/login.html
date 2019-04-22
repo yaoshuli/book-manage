@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>学校图书管理系统</title>
+	<link rel="stylesheet" href="../css/auth.css">
+</head>
+
+<body>
+	<div class="lowin">
+		<div class="lowin-brand">
+			<img src="../images/kodinger.jpg" alt="logo">
+		</div>
+		<div class="lowin-wrapper">
+			<div class="lowin-box lowin-login">
+				<div class="lowin-box-inner">
+						<p>欢迎进入,校园图书管理系统</p>
+						<div class="lowin-group">
+							<label>账号
+							</label>
+							<input type="text"  id="username" name="username" class="lowin-input">
+						</div>
+						<div class="lowin-group password-group">
+							<label>密码
+							</label>
+							<input type="password" id="password" name="password"  class="lowin-input">
+						</div>
+
+						<p class="message" style="font-size: 20px"></p>
+						<button class="lowin-btn login-btn" onclick="login()">
+							登录
+						</button>
+
+
+						<div class="text-foot">
+							还没有账号？请单击<a href="" class="register-link">注册</a>
+						</div>
+
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+	<script src="../js/jquery-3.3.1.min.js" ></script>
+	<script>
+		/**
+		 * 定义登录函数
+		 */
+		function login(){
+			var username = $("#username").val();
+			var password = $("#password").val();
+			if(username == undefined || username== ""){
+				alert("用户名不能为空！");
+				return ;
+			}
+
+			if(password ==undefined || password==""){
+				alert("密码不能为空！");
+				return ;
+			}
+			$.ajax({
+				url: "http://127.0.0.1:9091/login",
+				type:"POST",
+				data:{username:username,password:password},
+				dataType:"json",
+				success: function(data){
+					if(data.code == 200){
+						console.info(data);
+						window.location.href='index.html';
+						return;
+					}
+					$(".message").append(data.message);
+				},
+				error:function (XMLHttpRequest) {
+					console.info(XMLHttpRequest);
+				}
+			})
+		}
+	</script>
+</body>
+</html>
