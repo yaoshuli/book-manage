@@ -1,0 +1,21 @@
+server:
+  port: 9091  #设置服务器启动端口
+
+spring:
+  mvc:
+    thymeleaf:
+      cache: false    #禁用thymeleaf模板引擎缓存
+      enabled: false  #禁用thymeleaf模板
+  datasource: #数据源配置
+    url: jdbc:mariadb://localhost:3306/book_manage       #数据库地址
+    username: root                                #账号
+    password: admin                               #密码
+    driver-class-name: org.mariadb.jdbc.Driver    #驱动
+    type: com.alibaba.druid.pool.DruidDataSource  #连接池
+
+# 打印sql
+logging:
+  level:
+    com.book.mapper.business : debug
+mybatis: #mybatis配置
+  mapperLocations: classpath:mapper/*/*.xml   #指定mybatis的映射xml文件所在位置

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 项目基本信息.包id、项目id、版本信息-->
+    <groupId>BookManage</groupId>
+    <artifactId>BookManage</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <!-- 定义Spring boot 父类继承，Maven的用户可以通过继承spring-boot-starter-parent项目来获得一些合理的默认配置。
+        这个parent提供了以下特性：
+            1.默认使用Java 8
+            2.使用UTF-8编码
+            3.能够识别application.properties和application.yml类型的文件
+            4.提供spring有关组件的默认版本号-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.1.RELEASE</version>
+    </parent>
+
+    <!-- 定义属性标签 用于存储各jar包的版本信息 -->
+    <properties>
+        <mybatis.version>1.3.0</mybatis.version>
+        <lombok.version>1.18.4</lombok.version>
+        <swagger.version>2.6.1</swagger.version>
+        <shiro.version>1.3.2</shiro.version>
+    </properties>
+
+    <!-- 定义jar的引用 -->
+    <dependencies>
+
+        <!-- spring boot web 开发包
+             因开发包中依赖了spring mvc 和 spring所以引入该包就相当于引入了整个spring+spring mvc的框架体系
+            其中大致依赖内含:
+                    spring-starter-json
+                    spring-starter-tomcat
+                    spring-web
+                    spring-webmvc
+                        spring-aop
+                        spring-beans
+                        spring-context
+                        spring-core                 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- 使用tk Mybatis 开发包
+            通过spring boot 接入mybatis框架，用于与数据库交互
+            tk Mybatis 相较于Mybatis封装了较多的curd方法 便于直接使用-->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+            <version>2.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
+            <version>4.0.3</version>
+        </dependency>
+
+
+        <!-- projectLombok 工具包
+            用于帮助实体类生成getter 和setter方法 映射和转换-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+        <!-- mariadb连接工具包
+             内含mariadb驱动程序根据驱动访问数据库-->
+        <dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+
+
+        <!-- druid 连接池
+            druid 连接池是阿里巴巴推出的一款连接池
+            他区别于dbcp的连接池有较好的稳定性，高并发情况下表现也特别好！-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.26</version>
+        </dependency>
+
+        <!--分页插件-->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>4.2.1</version>
+        </dependency>
+
+
+        <!-- Swagger2 API框架
+            swagger2是一款款让你更好的书写API文档的规范且完整框架。
+            提供描述、生产、消费和可视化RESTful Web Service。  -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+
+
+        <!-- Shiro 工具包
+            shiro是一个安全性框架,现在大部分公司使用shiro作为安全性框架因为它相当简单。
+            对比Spring Security，可能没有Spring Security做的功能强大，但是在实际工作时可能并不需要那么复杂的东西
+            -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+
+    </dependencies>
+</project>
