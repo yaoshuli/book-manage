@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>图书核录</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../icon/favicon.ico">
+    <!-- bootstrap 公共js -->
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 结果提示框 css　-->
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+
+    <!-- 引入bootstrap table 所需css -->
+    <link href="../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+
+    <!-- 引入h+模板 所需css -->
+    <link href="../css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="../css/animate.css" rel="stylesheet">
+    <link href="../css/style.css?v=4.1.0" rel="stylesheet">
+</head>
+<body class="gray-bg">
+
+<div class="wrapper wrapper-content  animated fadeInRight">
+    <div class="row">
+
+
+        <div class="col-sm-3">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <span class="text-muted small pull-right">最后更新：<i class="fa fa-clock-o"></i> 2015-09-01 12:00</span>
+                    <h2>客户管理</h2>
+                    <p>
+                        所有客户必须通过邮件验证
+                    </p>
+                    <div class="input-group">
+                        <input type="text" placeholder="查找客户" class="input form-control">
+                        <span class="input-group-btn">
+                                        <button type="button" class="btn btn btn-primary"> <i class="fa fa-search"></i> 搜索</button>
+                                </span>
+                    </div>
+                    <div class="clients-list">
+                        <ul class="nav nav-tabs">
+                            <span class="pull-right small text-muted">1406 个客户</span>
+                            <li class=""><a data-toggle="tab" href="#tab-2"><i class="fa fa-briefcase"></i> 公司</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="tab-1" class="tab-pane active">
+                                <div class="full-height-scroll">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-hover">
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div style="padding-bottom:0px;">
+
+                <div class="ibox float-e-margins">
+                    <div class="panel panel-default">
+                        <div class="ibox-title">
+                            <h5>查询条件</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <form id="formSearch" class="form-horizontal">
+                                <div class="form-group" style="margin-top:15px">
+                                    <label class="control-label col-sm-1" for="purchaseName">计划名称</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" name="purchaseName" id="purchaseName">
+                                    </div>
+
+                                    <label class="control-label col-sm-1" for="principalName">采购负责人</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control "  name="principalName" id="principalName">
+                                    </div>
+
+                                    <label class="control-label col-sm-1" for="gmtCreate">录入时间</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" name="gmtCreate"  id="gmtCreate">
+                                    </div>
+
+
+                                    <div class="col-sm-2" style="text-align:left;">
+                                        <button type="button" style="margin-left:50px" id="readers_btn_query" class="btn btn-primary">查询</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div >
+                <div class="ibox-content">
+                    <table id="readers_table"></table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- 全局js -->
+<script src="../js/jquery-3.3.1.min.js?v=2.1.4"></script>
+<script src="../js/bootstrap/bootstrap.min.js?v=3.3.6"></script>
+
+
+<!-- bootstrap table js引入 -->
+<script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+
+<!-- Sweet alert  结果提示框js-->
+<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
+
+<!-- H+模板js -->
+<script src="../js/content.js?v=1.0.0"></script>
+
+<!--自身js -->
+<script src="../js/book-base.js"></script>
+<script src="../js/business/book_check_input.js"></script>
+</body>
+</html>

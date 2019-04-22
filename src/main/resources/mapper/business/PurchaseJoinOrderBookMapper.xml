@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.book.mapper.business.PurchaseJoinOrderBookMapper" >
+
+    <insert id="insertJoin">
+        insert into tb_purchase_order_book(order_book_id,purchase_id) values (#{orderBookId},#{purchaseId})
+    </insert>
+</mapper>

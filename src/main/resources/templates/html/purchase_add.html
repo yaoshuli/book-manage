@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../icon/favicon.ico">
+
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- 引入h+模板 所需css -->
+    <link href="../css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="../css/animate.css" rel="stylesheet">
+    <link href="../css/style.css?v=4.1.0" rel="stylesheet">
+
+    <!-- 结果提示框 css　-->
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+</head>
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>采购书籍信息填写</h5>
+                        <div class="ibox-tools">
+
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+
+
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form class="form-horizontal m-t" id="bookForm">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">批量信息生成框:</label>
+                                <div class="col-sm-10">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <input type="number" id="bookNumber" placeholder="请输入书籍数量" class="form-control">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <a class="btn btn-primary btn-rounded" href="#" id="generate">生成</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group" name="bookInfo">
+                                <label class="col-sm-2 control-label">书籍信息</label>
+                                <div class="col-sm-10">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <input type="text" placeholder="书籍名称" name="orderBookName" class="form-control">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type="text" placeholder="作者名称" name="orderBookAuthor" class="form-control">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type="text" placeholder="订购数量" name="orderBookNumber" class="form-control">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select class="form-control m-b" name="orderBookType">
+                                                <option value="MLZY_MZDSX">马列主义毛泽东思想</option>
+                                                <option value="ZX">哲学</option>
+                                                <option value="SHKX">社会科学</option>
+                                                <option value="ZRKX">自然科学</option>
+                                                <option value="ZHXTS">综合性图书</option>
+                                            </select>
+                                        </div>
+                                        <!--<div class="col-md-2">-->
+                                        <!--<a class="btn btn-primary btn-danger" href="#" onclick="removeBookInfo(this)">-->
+                                        <!--<i class="fa fa-remove"></i>-->
+                                        <!--</a>-->
+                                        <!--</div>-->
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </form>
+
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>采购计划信息填写</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form class="form-horizontal m-t" id="purchaseForm">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">采购计划：</label>
+                                <div class="col-sm-4">
+                                    <input  name="purchaseName" class="form-control" type="text">
+                                    <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 请输入计划名称或采购期号</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">负责人名称：</label>
+                                <div class="col-sm-4">
+                                    <input  name="principalName" class="form-control" type="text">
+                                    <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 请输入与身份证相匹配姓名</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">负责人联系电话：</label>
+                                <div class="col-sm-4">
+                                    <input  name="principalPhone" class="form-control" type="text">
+                                    <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 请输入国内手机号</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">采购描述：</label>
+                                <div class="col-sm-4">
+                                    <input  name="purchaseDescription" class="form-control" type="text" aria-required="true" aria-invalid="false" class="valid">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-3">
+                                    <button id="purchase_add_submit" class="btn btn-primary" type="submit">提交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- 全局js -->
+    <script src="../js/jquery-3.3.1.min.js?v=2.1.4"></script>
+    <script src="../js/bootstrap/bootstrap.min.js?v=3.3.6"></script>
+
+    <!-- H+ 模板js -->
+    <script src="../js/content.js?v=1.0.0"></script>
+
+    <!-- jQuery Validation plugin javascript 校验用js-->
+    <script src="../js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="../js/plugins/validate/messages_zh.min.js"></script>
+
+    <!-- Sweet alert  结果提示框js-->
+    <script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
+
+    <script src="../js/business/purchase_add.js"></script>
+
+</body>
+</html>
